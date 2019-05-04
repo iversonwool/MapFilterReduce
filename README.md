@@ -8,19 +8,19 @@ Inspired by the method (map filter and reduce) of Array of JavaScript and chaini
 ```
 NSArray *testArray = @[@(1), @(2), @(3), @(4), @(5)];
     
-//MARK: - useage of map
+//MARK: - usage of map
 NSArray *mapResult = testArray.lk_map(^(NSNumber *value, NSUInteger index, NSArray *array) {
     return @(value.integerValue * 2);
 });
 NSLog(@"map result => %@", mapResult);// @[@(2), @(4), @(6), @(8), @(10)]
     
-//MARK: - useage of filter
+//MARK: - usage of filter
 NSArray *oddResult = testArray.lk_filter(^BOOL(NSNumber *value, NSUInteger index, NSArray *array) {
     return value.integerValue % 2 != 0;
 });
 NSLog(@"odd result => %@", oddResult);// @[@(1), @(3), @(5)]
     
-//MARK: - useage of reduce
+//MARK: - usage of reduce
 NSArray *member = @[@"Lily", @"Lucy", @"Jim"];
 NSString *greeting = [member lk_reduce:^id _Nonnull(NSString * _Nonnull accumulator, NSString * _Nonnull currentValue, NSUInteger index, NSArray * _Nonnull array) {
     if (index == 0) {
